@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Config {
-    @Value("${config.test}")
+
+    //@Value("${config.test}")
     private String test;
 
     public String getTest() {

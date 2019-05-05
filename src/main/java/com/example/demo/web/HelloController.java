@@ -3,6 +3,7 @@ package com.example.demo.web;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.model.po.ApkInfo;
 import com.example.demo.service.ApkInfoService;
+import com.example.demo.util.Config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController()
 public class HelloController {
+    @Autowired
+    Config config;
 
     @Autowired
     ApkInfoService apkInfoService;
