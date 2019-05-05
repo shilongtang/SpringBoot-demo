@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.ApkInfoMapper">
+	<resultMap id="BaseResultMap" type="com.example.demo.model.po.ApkInfo">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="versionCode" property="versionCode" jdbcType="INTEGER" />
+		<result column="versionName" property="versionName" jdbcType="VARCHAR" />
+		<result column="size" property="size" jdbcType="VARCHAR" />
+		<result column="apkPath" property="apkPath" jdbcType="VARCHAR" />
+		<result column="patchPath" property="patchPath" jdbcType="VARCHAR" />
+		<result column="versionExplain" property="versionExplain" jdbcType="VARCHAR" />
+		<result column="patchUrl" property="patchUrl" jdbcType="VARCHAR" />
+		<result column="initVersionCode" property="initVersionCode" jdbcType="INTEGER" />
+		<result column="isRenewal" property="isRenewal" jdbcType="INTEGER" />
+		<result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+
+	<sql id="page_sql">
+		<if test="start != null">
+			limit #{start,jdbcType=INTEGER},
+			#{pageSize,jdbcType=INTEGER}
+		</if>
+	</sql>
+
+	<select id="get" parameterType="java.lang.String" resultMap="BaseResultMap">
+		SELECT
+		*
+		FROM tb_apk_info
+		WHERE versionCode = #{VALUE}
+	</select>
+
+
+</mapper>

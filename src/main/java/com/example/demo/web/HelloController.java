@@ -1,6 +1,10 @@
 package com.example.demo.web;
 
+import com.alibaba.fastjson.JSONObject;
+import com.example.demo.model.po.ApkInfo;
+import com.example.demo.service.ApkInfoService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +19,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 public class HelloController {
 
-    @GetMapping("/test")
+    @Autowired
+    ApkInfoService apkInfoService;
+
+    @GetMapping("/admin/test")
     public void test() {
+        log.info("Logger Level ：{}", "info");
+        log.error("Logger Level ：{}", "error");
+        log.debug("Logger Level ：{}", "debug");
+        log.warn("Logger Level ：{}", "warn");
+    }
+
+    @GetMapping("/admin/getApkInfo")
+    public void getApkInfo() throws Exception{
+        try {
+            ApkInfo apkInfo = apkInfoService.get("115");
+            log.info("Logger apkInfo ：{}", JSONObject.toJSONString(apkInfo));
+        }catch (Exception e){
+            log.error("Logger apkInfo ：{}", e.getMessage());
+        }
+
         log.info("Logger Level ：{}", "info");
         log.error("Logger Level ：{}", "error");
         log.debug("Logger Level ：{}", "debug");
