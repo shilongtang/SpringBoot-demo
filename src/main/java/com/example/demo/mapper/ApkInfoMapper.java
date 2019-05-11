@@ -16,5 +16,5 @@ public interface ApkInfoMapper {
      * @return
      * @throws Exception
      */
-    ApkInfo get(String versionCode) throws Exception;
+    ApkInfo get(String versionCode);
 }

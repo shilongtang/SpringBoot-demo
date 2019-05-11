@@ -18,5 +18,5 @@ public interface ApkInfoService {
      * @return
      * @throws Exception
      */
-    ApkInfo get(String versionCode) throws Exception;
+    ApkInfo get(String versionCode);
 }

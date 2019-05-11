@@ -1,6 +1,7 @@
 package com.example.demo.util;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
  * @Version 1.0
  */
 @Component
+@ConfigurationProperties(prefix = "inv")
 public class Config {
 
     //@Value("${config.test}")

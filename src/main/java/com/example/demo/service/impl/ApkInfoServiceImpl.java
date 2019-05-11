@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.exception.MyException;
 import com.example.demo.mapper.ApkInfoMapper;
 import com.example.demo.model.po.ApkInfo;
 import com.example.demo.service.ApkInfoService;
@@ -19,7 +20,10 @@ public class ApkInfoServiceImpl implements ApkInfoService {
     ApkInfoMapper apkInfoMapper;
 
     @Override
-    public ApkInfo get(String versionCode) throws Exception {
+    public ApkInfo get(String versionCode){
+       /* int i = 0;
+        int b = 1/i;*/
+
         return apkInfoMapper.get(versionCode);
     }
 }

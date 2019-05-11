@@ -1,6 +1,6 @@
 
 spring:
   profiles:
-    active: @spring.profiles.active@
     include: common
+    active: @spring.profiles.active@
 

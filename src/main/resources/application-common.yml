@@ -10,9 +10,15 @@ mybatis:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
 spring:
   datasource:
-    url: jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-    username: st_test
-    password: '@stTest!1103#St$'
+    # jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    url: ENC(DMcX/k3HFSGf+LSFoUmTxsKEmUouODHx+gfaS0rFvsXbNqChSkO8TRNesxzWdOYEV6ZHRWJWhOJ2LafzYGWwFpgNMdHZntvCizkMdv7YfKfNLNjCnRBBgUfjlofETOHHz34m3J3zyG/aUaTgqxVEuZAtc9ie/L5m4s4rmbGCm8/rRTY826QgQnaNJ5zWC28D)
+    #url: jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    # st_test
+    #username: st_test
+    username: ENC(+MQxFVm4kF2N1+veJ9A9GQ==)
+    # @stTest!1103#St$
+    #password: '@stTest!1103#St$'
+    password: ENC(wJ5+6HyHrU+FXgcOL2AXNcPRuDnxYdSvPXhiaK14H0U=)
     continue-on-error: true
     sql-script-encoding: UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -35,4 +41,13 @@ spring:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
       filters: stat,wall,log4j2
+  redis:
+    host: 39.107.90.67
+    port: 6379
+    password: Mm123456
+inv:
+  test: 123123
+jasypt:
+  encryptor:
+    password: demo
 
