@@ -19,6 +19,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @ServletComponentScan(basePackages = {"com.example.demo.filter"})
 @EnableScheduling
 @SpringBootApplication
+//@EnableAutoConfiguration(exclude = )
 @MapperScan("com.example.demo.mapper")
 public class DemoApplication {
 

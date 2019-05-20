@@ -41,10 +41,22 @@ spring:
       connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       use-global-data-source-stat: true
       filters: stat,wall,log4j2
+  # redis
   redis:
     host: 39.107.90.67
     port: 6379
     password: Mm123456
+  # rabbitmq
+  rabbitmq:
+    host: 39.107.90.67
+    username: admin
+    password: Mm123456
+  #data:
+    # elasticsearch
+    #elasticsearch:
+     # cluster-nodes: 39.107.90.67:9200
+      #repositories:
+       # enabled: true
 inv:
   test: 123123
 jasypt:

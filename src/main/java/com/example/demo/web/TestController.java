@@ -1,5 +1,6 @@
 package com.example.demo.web;
 
+import com.example.demo.rabbitmq.RabbitmqUtil;
 import com.example.demo.service.AsyncService;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
@@ -58,11 +59,10 @@ public class TestController extends BaseController {
         redisTemplate.opsForValue().set("1231","123123");
         int i = 0;
         int b = 1/i;
-        /*try {
+    }
 
-        }catch (Exception e){
-
-        }*/
+    @GetMapping("/rabbitmqTest")
+    public void rabbitmqTest() {
 
     }
 

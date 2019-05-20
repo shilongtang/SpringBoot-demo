@@ -1,11 +1,10 @@
 package com.example.demo.web;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.demo.help.Config;
+import com.example.demo.help.utils.result.ApiResponse;
 import com.example.demo.model.po.ApkInfo;
 import com.example.demo.service.ApkInfoService;
-import com.example.demo.util.Config;
-import com.example.demo.util.result.ApiResponse;
-import io.micrometer.core.annotation.Timed;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -14,10 +13,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Scope;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Api()用于类；

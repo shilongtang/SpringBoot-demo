@@ -1,4 +1,4 @@
-package com.example.demo.util.result;
+package com.example.demo.help.utils.result;
 
 /**
  * @Author: 青菜

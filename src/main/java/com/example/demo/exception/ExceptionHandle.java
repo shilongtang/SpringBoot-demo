@@ -1,7 +1,7 @@
 package com.example.demo.exception;
 
-import com.example.demo.util.result.ApiResponse;
-import com.example.demo.util.result.ApiResponseCodeEnum;
+import com.example.demo.help.utils.result.ApiResponse;
+import com.example.demo.help.utils.result.ApiResponseCodeEnum;
 import com.example.demo.web.BaseController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
