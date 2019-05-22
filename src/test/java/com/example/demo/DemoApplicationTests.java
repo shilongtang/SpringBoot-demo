@@ -27,6 +27,7 @@ public class DemoApplicationTests {
 		System.out.println(password+"----------------");
 		Assert.assertTrue(name.length() > 0);
 		Assert.assertTrue(password.length() > 0);
+
 	}
 
 

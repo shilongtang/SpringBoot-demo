@@ -19,4 +19,5 @@ public interface ApkInfoService {
      * @throws Exception
      */
     ApkInfo get(String versionCode);
+    ApkInfo get(String versionCode,Integer i);
 }

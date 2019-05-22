@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.alibaba.fastjson.JSONObject;
+import lombok.Data;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
 import org.jfree.chart.JFreeChart;
@@ -26,6 +28,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 
 /**
  * @Author: 青菜
@@ -36,13 +39,42 @@ import java.text.NumberFormat;
 public class Test {
 
     public static void main(String[] args) {
-       // makeLineAndShapeChart();
-        makePieChart();
-        //makeBarChart();
-        //makeBarChart2();
-        //makeBarGroupChart();
-        //makeStackedBarChart();
-      /*  // 生成饼状图
+        String s = testTryCatch();
+        System.out.println(s);
+    }
+
+    static String testTryCatch(){
+        try {
+            System.exit(0);
+            return "1";
+        }catch (Exception e){
+            return "2";
+        }finally {
+            return "3";
+        }
+    }
+
+    static void changeName(MyClass myClass) {
+        myClass.setName("changs");
+    }
+
+    static int changeName(int a) {
+       a =11<<1;
+        return a;
+    }
+
+    @Data
+    static class MyClass {
+        private Integer id;
+
+        private String name;
+
+        private Integer sex;
+
+        private String address;
+    }
+
+    /*  // 生成饼状图
         pm.makePieChart();
         // 生成单组柱状图
         pm.makeBarChart();
@@ -54,8 +86,6 @@ public class Test {
         pm.makeStackedBarChart();
         // 生成折线图
         pm.makeLineAndShapeChart();*/
-
-    }
 
     /**
      * 生成折线图

@@ -1,6 +1,7 @@
 package com.example.demo.mapper;
 
 import com.example.demo.model.po.ApkInfo;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author: 青菜
@@ -8,6 +9,7 @@ import com.example.demo.model.po.ApkInfo;
  * @Description:
  * @Version 1.0
  */
+@Component
 public interface ApkInfoMapper {
 
     /**
