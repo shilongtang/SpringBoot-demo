@@ -29,6 +29,7 @@ import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.UUID;
 
 /**
  * @Author: 青菜
@@ -39,8 +40,11 @@ import java.util.ArrayList;
 public class Test {
 
     public static void main(String[] args) {
-        String s = testTryCatch();
-        System.out.println(s);
+     //   String s = testTryCatch();
+        StringBuffer a = new StringBuffer();
+        boolean b = changeName(a);
+        System.out.println(a.toString());
+       // System.out.println(s);
     }
 
     static String testTryCatch(){
@@ -54,8 +58,10 @@ public class Test {
         }
     }
 
-    static void changeName(MyClass myClass) {
-        myClass.setName("changs");
+    static boolean changeName(StringBuffer a) {
+      //  myClass.setName("changs");
+        a.append("1231312313");
+        return true;
     }
 
     static int changeName(int a) {

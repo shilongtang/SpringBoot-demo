@@ -1,9 +1,3 @@
-
-#server:
- # ssl:
-  ## key-store-password: 123456
-    #key-store: classpath:ssl/keystore.p12
-    #key-store-type: PKCS12
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   configuration:
@@ -11,14 +5,14 @@ mybatis:
 spring:
   datasource:
     # jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
-    url: ENC(DMcX/k3HFSGf+LSFoUmTxsKEmUouODHx+gfaS0rFvsXbNqChSkO8TRNesxzWdOYEV6ZHRWJWhOJ2LafzYGWwFpgNMdHZntvCizkMdv7YfKfNLNjCnRBBgUfjlofETOHHz34m3J3zyG/aUaTgqxVEuZAtc9ie/L5m4s4rmbGCm8/rRTY826QgQnaNJ5zWC28D)
-    #url: jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
+    #url: ENC(DMcX/k3HFSGf+LSFoUmTxsKEmUouODHx+gfaS0rFvsXbNqChSkO8TRNesxzWdOYEV6ZHRWJWhOJ2LafzYGWwFpgNMdHZntvCizkMdv7YfKfNLNjCnRBBgUfjlofETOHHz34m3J3zyG/aUaTgqxVEuZAtc9ie/L5m4s4rmbGCm8/rRTY826QgQnaNJ5zWC28D)
+    url: jdbc:mysql://39.107.90.67:3306/test?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
     # st_test
-    #username: st_test
-    username: ENC(+MQxFVm4kF2N1+veJ9A9GQ==)
+    username: root
+    #username: ENC(+MQxFVm4kF2N1+veJ9A9GQ==)
     # @stTest!1103#St$
-    #password: '@stTest!1103#St$'
-    password: ENC(wJ5+6HyHrU+FXgcOL2AXNcPRuDnxYdSvPXhiaK14H0U=)
+    password: Mm123456
+    #password: ENC(wJ5+6HyHrU+FXgcOL2AXNcPRuDnxYdSvPXhiaK14H0U=)
     continue-on-error: true
     sql-script-encoding: UTF-8
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -51,15 +45,28 @@ spring:
     host: 39.107.90.67
     username: admin
     password: Mm123456
-  #data:
-    # elasticsearch
-    #elasticsearch:
-     # cluster-nodes: 39.107.90.67:9200
-      #repositories:
-       # enabled: true
+  # 热部署
+  devtools:
+    restart:
+      enabled: true
+
+  data:
+     #elasticsearch
+    elasticsearch:
+      #cluster-name: escluster
+      cluster-nodes: 39.107.90.67:9300
+  elasticsearch:
+    rest:
+      uris: ["http://39.107.90.67:9200"]
+
 inv:
   test: 123123
 jasypt:
   encryptor:
     password: demo
 
+
+#management:
+ # health:
+  #  elasticsearch:
+   #   enabled: false

@@ -25,7 +25,8 @@ public class ApkInfoServiceImpl implements ApkInfoService {
     public ApkInfo get(String versionCode){
        /* int i = 0;
         int b = 1/i;*/
-        return apkInfoMapper.get(versionCode);
+        ApkInfo apkInfo = apkInfoMapper.get(versionCode);
+        return apkInfo;
     }
 
     @Override

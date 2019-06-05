@@ -7,15 +7,12 @@ import com.example.demo.model.po.ApkInfo;
 import com.example.demo.service.ApkInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -62,9 +59,9 @@ public class HelloController extends BaseController {
         log.warn("Logger Level ：{}", "warn");
     }
 
-    @PostMapping("/admin/getApkInfo")
+    @GetMapping("/admin/getApkInfo")
     @ApiOperation(value="测试测试")
-    public ApiResponse getApkInfo(@RequestBody @ApiParam(name="用户对象",value="传入json格式",required=true) ApkInfo apkInfo1) throws Exception{
+    public ApiResponse getApkInfo() throws Exception{
         try {
             ApkInfo apkInfo = apkInfoService.get("115");
             log.info("Logger apkInfo ：{}", JSONObject.toJSONString(apkInfo));
@@ -76,7 +73,7 @@ public class HelloController extends BaseController {
         log.error("Logger Level ：{}", "error");
         log.debug("Logger Level ：{}", "debug");
         log.warn("Logger Level ：{}", "warn");
-        return super.callbackFail(890001,"{\"abs\":123132}");
+        return super.callbackFail(890002,"{\"abs\":123123}");
     }
 
     @GetMapping("/exception/test")
