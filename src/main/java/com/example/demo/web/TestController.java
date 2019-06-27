@@ -86,8 +86,13 @@ public class TestController extends BaseController {
         JSONObject param = new JSONObject();
         param.put("position","apkInfo_update");
         Integer update = zealotService.update(param.toJSONString());
-        int i = 0;
-        int b = 1/i;
+        try {
+            int i = 0;
+            int b = 1/i;
+        }catch (Exception e){
+
+        }
+
         return callbackSuccess(update+"");
     }
 
