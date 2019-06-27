@@ -16,8 +16,11 @@ public class DemoApplicationTests {
 	@Autowired
 	StringEncryptor encryptor;
 
+	/**
+	 * 删除卡券
+	 */
 	@Test
-	public void getPass() {
+	public void deleteCard() {
 	//	ENC(
 		String url = encryptor.encrypt("jdbc:mysql://rm-wz9qa53m3xbn8hiujo.mysql.rds.aliyuncs.com:3306/st_agent?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true");
 		String name = encryptor.encrypt("st_test");

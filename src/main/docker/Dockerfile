@@ -7,4 +7,6 @@ VOLUME /tmp
 ADD demo-0.0.1-SNAPSHOT.jar /demo-master.jar
 RUN sh -c 'touch /demo-master.jar'
 ENV JAVA_OPTS=""
+#设置时区
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/demo-master.jar"]

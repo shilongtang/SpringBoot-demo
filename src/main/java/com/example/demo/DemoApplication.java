@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
 * @Author: 青菜
@@ -16,6 +17,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 * @Description: SpringBoot 启动类
 * @Version 1.0
 */
+@EnableTransactionManagement  // 开启注解事务管理，等同于xml配置文件中的 <tx:annotation-driven />
 @ServletComponentScan(basePackages = {"com.example.demo.filter"})
 @EnableScheduling
 @SpringBootApplication

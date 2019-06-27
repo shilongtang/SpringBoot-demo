@@ -19,13 +19,19 @@ public class ExceptionHandle extends BaseController {
 
     @ExceptionHandler(Exception.class)
     private ApiResponse handle(Exception exception){
-        log.error("系统异常:",exception);
         if(exception instanceof MyException){
+            log.error("自定义异常:",exception);
             return super.callbackFail(ApiResponseCodeEnum.SYSTEM_EXCEPTION.getCode(), "发生异常："+exception.getMessage());
-        }else{
-
+        }else if(exception instanceof RuntimeException){
+            log.error("系统异常:",exception);
+            return super.callbackFail(ApiResponseCodeEnum.SYSTEM_EXCEPTION.getCode(), "发生异常："+exception.getMessage());
+        }else if(exception instanceof  Exception){
+            log.error("程序级别的异常:",exception);
+            return super.callbackFail(ApiResponseCodeEnum.SYSTEM_EXCEPTION.getCode(), exception.getMessage());
+        }else {
+            return super.callbackFail(ApiResponseCodeEnum.SYSTEM_EXCEPTION.getCode(), exception.getMessage());
         }
-        return super.callbackFail(ApiResponseCodeEnum.SYSTEM_EXCEPTION.getCode(), "发生异常："+exception.getMessage());
+
 
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zealots nameSpace="apkInfo">
+    <zealot id="get">
+        SELECT
+        *
+        FROM tb_apk_info
+        WHERE
+        <equal field="versionCode" value="versionCode"/>
+    </zealot>
+
+    <zealot id="update">
+        UPDATE
+        tb_apk_info
+        SET versionCode = 117
+    </zealot>
+
+</zealots>

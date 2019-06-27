@@ -54,6 +54,7 @@ public class HelloController extends BaseController {
     @GetMapping("/admin/test")
     public void test() {
         log.info("Logger Level ：{}", "info");
+        log.debug("Logger Level ：{}", "debug");
         log.error("Logger Level ：{}", "error");
         log.debug("Logger Level ：{}", "debug");
         log.warn("Logger Level ：{}", "warn");

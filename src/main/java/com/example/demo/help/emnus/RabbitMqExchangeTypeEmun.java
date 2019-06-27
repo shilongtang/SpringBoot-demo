@@ -8,8 +8,11 @@ package com.example.demo.help.emnus;
  */
 public enum RabbitMqExchangeTypeEmun {
 
+    /** direct */
     DIRECT("direct","单播"),
+    /** fanout */
     FANOUT("fanout","广播"),
+    /** topic */
     TOPIC("topic","关键词");
 
     private String type;

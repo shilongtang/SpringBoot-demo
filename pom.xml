@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
-	<version>1.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
 
@@ -142,6 +142,14 @@
 			<optional>true</optional>
 		</dependency>
 
+		<!-- zealot -->
+		<dependency>
+			<groupId>com.blinkfox</groupId>
+			<artifactId>zealot-spring-boot-starter</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.jfree</groupId>
 			<artifactId>jfreechart</artifactId>
@@ -187,7 +195,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- tag::plugin[] -->
+			<!-- docker plugin -->
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
@@ -204,7 +212,7 @@
 					</resources>
 				</configuration>
 			</plugin>
-			<!-- end::plugin[] -->
+			<!-- docker plugin -->
 
 		</plugins>
 	</build>
